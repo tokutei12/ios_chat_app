@@ -25,11 +25,16 @@ class LoginViewController: UIViewController {
             if user != nil {
                 // Do stuff after successful login.
                 print("Do stuff after successful login.")
+                self.performSegue(withIdentifier: "ChatViewController", sender: nil)
             } else {
                 // The login failed. Check error to see why.
                 print("The login failed. Check error to see why.")
             }
         }
+    }
+    
+    func segue() {
+        self.performSegue(withIdentifier: "ChatViewController", sender: nil)
     }
     
     override func viewDidLoad() {
